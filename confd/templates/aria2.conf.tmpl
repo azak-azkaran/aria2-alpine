@@ -15,6 +15,7 @@ rpc-secret={{ getenv "RPC_SECRET"}}
 
 {{if (getenv "SAVE_SESSION")}}
 save-session={{ getenv "SAVE_SESSION"}}
+input-file={{ getenv "SAVE_SESSION"}}
 {{end}}
 
 {{if (getenv "SAVE_SESSION_INTERVAL")}}
