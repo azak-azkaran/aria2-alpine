@@ -1,13 +1,14 @@
 enable-rpc=true
 rpc-listen-all=true
 dir={{ or (getenv "DOWNLOAD_DIR") "/downloads"}}
-log={{ or (getenv "DOWNLOAD_DIR") "/downloads"}}/aria2.log
+log={{ or (getenv "LOG_FILE") "/downloads/aria2.log"}}
 max-concurrent-downloads={{ or (getenv "CONCURRENT_DOWNLOADS") "4"}}
 split={{ or (getenv "SPLIT") "4"}}
 max-connection-per-server={{ or (getenv "CONNECTIONS_PER_SERVER") "4"}}
 user-agent={{ or (getenv "USER_AGENT") ""}}
 file-allocation={{ or (getenv "FILE_ALLOCATION") "none"}}
 auto-file-renaming={{ or (getenv "AUTO_FILE_RENAMING") "true"}}
+
 
 {{if (getenv "RPC_SECRET")}}
 rpc-secret={{ getenv "RPC_SECRET"}}
