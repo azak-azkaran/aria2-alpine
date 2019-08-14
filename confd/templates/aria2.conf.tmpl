@@ -1,7 +1,7 @@
 enable-rpc=true
 rpc-listen-all=true
 dir={{ or (getenv "DOWNLOAD_DIR") "/downloads"}}
-log={{ or (getenv "LOG_FILE") "/downloads/aria2.log"}}
+log={{ or (getenv "LOG_FILE") ""}}
 max-concurrent-downloads={{ or (getenv "CONCURRENT_DOWNLOADS") "4"}}
 split={{ or (getenv "SPLIT") "4"}}
 max-connection-per-server={{ or (getenv "CONNECTIONS_PER_SERVER") "4"}}
