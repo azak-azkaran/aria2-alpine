@@ -19,6 +19,5 @@ VOLUME /downloads
 # webui static content web server, map wherever is convenient
 EXPOSE 6800/tcp
 
-USER dummy
 #CMD aria2c --conf-path=/etc/aria2.conf
 CMD confd -onetime -backend env && aria2c --conf-path=/etc/aria2.conf
