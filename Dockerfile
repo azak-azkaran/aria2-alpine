@@ -11,7 +11,12 @@ ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.1
 RUN chmod +x /usr/bin/confd
 
 COPY ./confd /etc/confd
+RUN mkdir /opt/aria2/
+RUN confd -onetime -backend env
+RUN chown -R 1000:1000 /opt/aria2
 
+
+USER dummy
 VOLUME /downloads
 
 # aria2 RPC port, map as-is or reconfigure webui
@@ -20,4 +25,4 @@ VOLUME /downloads
 EXPOSE 6800/tcp
 
 #CMD aria2c --conf-path=/etc/aria2.conf
-CMD confd -onetime -backend env && aria2c --conf-path=/etc/aria2.conf
+CMD aria2c --conf-path=/opt/aria2/aria2.conf

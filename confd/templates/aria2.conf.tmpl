@@ -1,5 +1,8 @@
 enable-rpc=true
 rpc-listen-all=true
+disk-cache=0
+file-allocation=falloc
+
 dir={{ or (getenv "DOWNLOAD_DIR") "/downloads"}}
 log={{ or (getenv "LOG_FILE") ""}}
 max-concurrent-downloads={{ or (getenv "CONCURRENT_DOWNLOADS") "4"}}
@@ -8,7 +11,7 @@ max-connection-per-server={{ or (getenv "CONNECTIONS_PER_SERVER") "4"}}
 user-agent={{ or (getenv "USER_AGENT") ""}}
 file-allocation={{ or (getenv "FILE_ALLOCATION") "none"}}
 auto-file-renaming={{ or (getenv "AUTO_FILE_RENAMING") "true"}}
-
+max-overall-download-limit={{ or (getenv "OVERALL_DOWNLOAD_LIMIT") "6M"}}
 
 {{if (getenv "RPC_SECRET")}}
 rpc-secret={{ getenv "RPC_SECRET"}}
