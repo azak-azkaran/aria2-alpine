@@ -2,6 +2,8 @@ enable-rpc=true
 rpc-listen-all=true
 disk-cache=0
 file-allocation=falloc
+allow-overwrite=true
+auto-file-renaming=false
 
 dir={{ or (getenv "DOWNLOAD_DIR") "/downloads"}}
 log={{ or (getenv "LOG_FILE") ""}}
